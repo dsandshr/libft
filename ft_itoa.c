@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 14:36:56 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/08 17:05:30 by dsandshr         ###   ########.fr       */
+/*   Created: 2019/04/09 15:34:04 by dsandshr          #+#    #+#             */
+/*   Updated: 2019/04/09 17:43:00 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include <string.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_itoa(int n)
 {
-	char *str;
-	int i;
-	int j;
+	unsigned int j;
+	size_t i;
+	char *s;
 
-	j = 0;
+	j = n;
 	i = 0;
-	str = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (str == NULL)
-		return (NULL);
-	while (s1[i])
+	s = ft_strnew(ft_digitscount(n));
+	if (n < 0)
+		j *= -1;
+	if (n == 0)
+		s[i] = '0';
+	while (j > 0)
 	{
-		str[i] = s1[i];
+		s[i] = j % 10 + '0';
+		j /= 10;
 		i++;
 	}
-	while (s2[j])
-	{
-		str[i] = s2[j];
-		j++;
-		i++;
-	}
-	i++;
-	str[i] = '\0';
-	return (str);
+	if (n < 0)
+		s[i] = '-';
+	return (ft_strrev(s));
 }

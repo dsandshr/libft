@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_digitscount.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 14:36:56 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/08 17:05:30 by dsandshr         ###   ########.fr       */
+/*   Created: 2019/04/09 17:42:02 by dsandshr          #+#    #+#             */
+/*   Updated: 2019/04/09 17:42:16 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+size_t	ft_digitscount(int n)
 {
-	char *str;
-	int i;
-	int j;
+	size_t i;
 
-	j = 0;
 	i = 0;
-	str = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (str == NULL)
-		return (NULL);
-	while (s1[i])
+	if (n < 0)
 	{
-		str[i] = s1[i];
 		i++;
+		n = n * -1;
 	}
-	while (s2[j])
+	else if (n == 0)
+		i++;
+	else
 	{
-		str[i] = s2[j];
-		j++;
-		i++;
+		while (n != 0)
+		{
+			n /= 10;
+			i++;
+		}
 	}
-	i++;
-	str[i] = '\0';
-	return (str);
+	return (i);
 }

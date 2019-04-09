@@ -6,7 +6,7 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 18:54:08 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/08 14:43:43 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/09 17:45:46 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,7 @@
 	void	ft_putendl_fd(char const *s, int fd);
 	void	ft_putnbr_fd(int n, int fd);
 	char	*ft_strjoin(char const *s1, char const *s2);
+	size_t	ft_digitscount(int n);
+	char	*ft_strrev(char *s);
 
 #endif

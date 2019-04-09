@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 14:36:56 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/08 17:05:30 by dsandshr         ###   ########.fr       */
+/*   Created: 2019/04/09 17:39:25 by dsandshr          #+#    #+#             */
+/*   Updated: 2019/04/09 17:45:31 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strrev(char *s)
 {
-	char *str;
-	int i;
 	int j;
+	int i;
+	char *str;
 
 	j = 0;
 	i = 0;
-	str = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (str == NULL)
-		return (NULL);
-	while (s1[i])
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-	{
-		str[i] = s2[j];
+	str = ft_strnew(ft_strlen(s));
+	while (s[j])
 		j++;
+	while (j-- > 0)
+	{
+		str[i] = s[j];
 		i++;
 	}
-	i++;
-	str[i] = '\0';
-	return (str);
+	i = 0;
+	while (s[i])
+	{
+		s[i] = str[i];
+		i++;
+	}
+	return (s);
 }
