@@ -6,7 +6,7 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 15:34:04 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/12 13:57:35 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/12 16:27:31 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 char	*ft_itoa(int n)
 {
-	unsigned int j;
-	size_t i;
-	char *s;
+	unsigned int	j;
+	size_t			i;
+	char			*s;
 
 	j = n;
 	i = 0;

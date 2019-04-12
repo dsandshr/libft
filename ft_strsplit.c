@@ -6,10 +6,11 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 16:58:51 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/11 17:38:36 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/12 14:57:19 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 char			**ft_strsplit(const char *str, char c)
