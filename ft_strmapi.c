@@ -6,7 +6,7 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 21:55:36 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/07 21:58:40 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/11 20:30:31 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *s2;
-	int i;
+	char	*s2;
+	int		i;
 
 	s2 = ft_strnew(ft_strlen(s));
 	i = 0;

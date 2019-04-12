@@ -6,7 +6,7 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 17:39:25 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/09 17:45:31 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/11 20:31:22 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strrev(char *s)
 {
-	int j;
-	int i;
-	char *str;
+	int		j;
+	int		i;
+	char	*str;
 
 	j = 0;
 	i = 0;

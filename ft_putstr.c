@@ -6,13 +6,12 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:12:27 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/05 14:27:04 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/11 21:14:28 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void	ft_putchar(char c);
+#include "libft.h"
 
 void	ft_putstr(char const *s)
 {
@@ -21,7 +20,7 @@ void	ft_putstr(char const *s)
 	i = 0;
 	while (s[i])
 	{
-		ft_putchar(s[i]);
+		write(1, &s[i], 1);
 		i++;
 	}
 }

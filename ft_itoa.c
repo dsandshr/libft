@@ -6,12 +6,12 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 15:34:04 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/09 17:43:00 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/12 13:57:35 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
+#include <stdlib.h>
 
 char	*ft_itoa(int n)
 {
@@ -21,7 +21,8 @@ char	*ft_itoa(int n)
 
 	j = n;
 	i = 0;
-	s = ft_strnew(ft_digitscount(n));
+	if (!(s = ft_strnew(ft_digitscount(n))))
+		return (NULL);
 	if (n < 0)
 		j *= -1;
 	if (n == 0)

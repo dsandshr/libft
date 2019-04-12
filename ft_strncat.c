@@ -6,7 +6,7 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 13:14:56 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/06 13:29:09 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/11 20:30:49 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 {
-	int i;
-	size_t j;
+	int		i;
+	size_t	j;
 
 	j = 0;
 	i = ft_strlen(s1);
