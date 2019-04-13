@@ -6,7 +6,7 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 21:59:06 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/12 14:58:53 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/13 15:29:02 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char	*s2;
 	size_t	i;
 
-	s2 = ft_strnew(len);
-	if (s2 == NULL)
+	if (!(s2 = ft_strnew(len)))
+		return (NULL);
+	if (!s)
 		return (NULL);
 	i = 0;
 	s = s + start;

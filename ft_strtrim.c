@@ -6,7 +6,7 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 14:49:56 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/12 14:58:29 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/13 15:32:33 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strtrim(char const *s)
 	int		i;
 	char	*s2;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 		i++;
