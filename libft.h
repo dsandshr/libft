@@ -6,7 +6,7 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 18:54:08 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/11 21:06:56 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/13 22:41:22 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,11 @@ size_t				ft_digitscount(int n);
 char				*ft_strrev(char *s);
 int					ft_countword(const char *s, char c);
 char				*ft_memword(const char *str, char c, int *i);
+t_list				*ft_lstnew(void const *content, size_t content_size);
+void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 #endif
