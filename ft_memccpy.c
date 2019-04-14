@@ -6,11 +6,10 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:43:27 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/11 20:19:58 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/14 20:34:08 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void	*ft_memccpy(void *restrict d, const void *restrict s, int c, size_t n)

@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/09 15:34:04 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/14 20:25:00 by dsandshr         ###   ########.fr       */
+/*   Created: 2019/04/14 20:17:48 by dsandshr          #+#    #+#             */
+/*   Updated: 2019/04/14 20:41:22 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_itoa(int n)
+void	ft_swap(int *a, int *b)
 {
-	unsigned int	j;
-	size_t			i;
-	char			*s;
+	int c;
 
-	j = n;
-	i = 0;
-	if (!(s = ft_strnew(ft_digitscount(n))))
-		return (NULL);
-	if (n < 0)
-		j *= -1;
-	if (n == 0)
-		s[i] = '0';
-	while (j > 0)
-	{
-		s[i] = j % 10 + '0';
-		j /= 10;
-		i++;
-	}
-	if (n < 0)
-		s[i] = '-';
-	return (ft_strrev(s));
+	c = *a;
+	*a = *b;
+	*b = c;
 }

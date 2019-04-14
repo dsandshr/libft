@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/09 15:34:04 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/14 20:25:00 by dsandshr         ###   ########.fr       */
+/*   Created: 2019/04/14 16:03:15 by dsandshr          #+#    #+#             */
+/*   Updated: 2019/04/14 20:25:42 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	unsigned int	j;
-	size_t			i;
-	char			*s;
+	t_list *new;
+	t_list *new1;
 
-	j = n;
-	i = 0;
-	if (!(s = ft_strnew(ft_digitscount(n))))
-		return (NULL);
-	if (n < 0)
-		j *= -1;
-	if (n == 0)
-		s[i] = '0';
-	while (j > 0)
+	new = f(lst);
+	new1 = new;
+	while (lst->next)
 	{
-		s[i] = j % 10 + '0';
-		j /= 10;
-		i++;
+		lst = lst->next;
+		if (!(new->next = f(lst)))
+		{
+			free(new->next);
+			return (NULL);
+		}
+		new = new->next;
 	}
-	if (n < 0)
-		s[i] = '-';
-	return (ft_strrev(s));
+	return (new1);
 }

@@ -6,12 +6,11 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 17:36:08 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/13 20:10:11 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/14 20:35:51 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_memword(const char *str, char c, int *i)
 {

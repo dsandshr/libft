@@ -1,38 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/09 15:34:04 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/14 20:25:00 by dsandshr         ###   ########.fr       */
+/*   Created: 2019/04/14 20:43:03 by dsandshr          #+#    #+#             */
+/*   Updated: 2019/04/14 20:52:01 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_itoa(int n)
+int	ft_abs(int a)
 {
-	unsigned int	j;
-	size_t			i;
-	char			*s;
-
-	j = n;
-	i = 0;
-	if (!(s = ft_strnew(ft_digitscount(n))))
-		return (NULL);
-	if (n < 0)
-		j *= -1;
-	if (n == 0)
-		s[i] = '0';
-	while (j > 0)
-	{
-		s[i] = j % 10 + '0';
-		j /= 10;
-		i++;
-	}
-	if (n < 0)
-		s[i] = '-';
-	return (ft_strrev(s));
+	return (a = (a > 0 ? a : a * -1));
 }

@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/09 15:34:04 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/14 20:25:00 by dsandshr         ###   ########.fr       */
+/*   Created: 2019/04/13 22:42:10 by dsandshr          #+#    #+#             */
+/*   Updated: 2019/04/14 20:25:21 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	unsigned int	j;
-	size_t			i;
-	char			*s;
+	t_list *new;
 
-	j = n;
-	i = 0;
-	if (!(s = ft_strnew(ft_digitscount(n))))
-		return (NULL);
-	if (n < 0)
-		j *= -1;
-	if (n == 0)
-		s[i] = '0';
-	while (j > 0)
+	if (*alst && del && alst)
 	{
-		s[i] = j % 10 + '0';
-		j /= 10;
-		i++;
+		while (*alst)
+		{
+			new = (*alst)->next;
+			ft_lstdelone(alst, del);
+			*alst = new;
+		}
 	}
-	if (n < 0)
-		s[i] = '-';
-	return (ft_strrev(s));
 }

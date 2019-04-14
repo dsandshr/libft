@@ -6,7 +6,7 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 18:54:08 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/13 22:41:22 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/14 20:52:30 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ void				ft_putstr(char const *s);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy\
-(void *restrict d, const void *restrict s, size_t n);
+(void *d, const void *s, size_t n);
 void				*ft_memccpy\
-(void *restrict d, const void *restrict s, int c, size_t n);
+(void *d, const void *s, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_strcat\
-(char *restrict s1, const char *restrict s2);
+(char *s1, const char *s2);
 char				*ft_strncat\
-(char *restrict s1, const char *restrict s2, size_t n);
+(char *s1, const char *s2, size_t n);
 size_t				ft_strlcat\
-(char *restrict d, const char *restrict s, size_t n);
+(char *d, const char *s, size_t n);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *s1, const char *s2);
@@ -90,5 +90,7 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_swap(int a, int b);
+int					ft_abs(int i);
 
 #endif
