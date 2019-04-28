@@ -6,13 +6,13 @@
 /*   By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 16:58:51 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/04/15 18:37:30 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/04/25 15:13:34 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			**ft_strsplit(const char *str, char c)
+char		**ft_strsplit(const char *str, char c)
 {
 	int		i;
 	int		j;
@@ -30,7 +30,11 @@ char			**ft_strsplit(const char *str, char c)
 		i++;
 	while (j < w && str[i])
 	{
-		s[j] = ft_memword(str, c, &i);
+		if (!(s[j] = ft_memword(str, c, &i)))
+		{
+			free(s[j]);
+			return (NULL);
+		}
 		j++;
 	}
 	s[j] = NULL;

@@ -6,7 +6,7 @@
 #    By: dsandshr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/04 18:53:00 by dsandshr          #+#    #+#              #
-#    Updated: 2019/04/15 16:24:28 by dsandshr         ###   ########.fr        #
+#    Updated: 2019/04/25 15:56:15 by dsandshr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRC) -I libft.h
-	ar rc $(NAME) $(NEN)
-	ranlib $(NAME)
+	@gcc -Wall -Wextra -Werror -c $(SRC) -I libft.h
+	@ar rc $(NAME) $(NEN)
+	@ranlib $(NAME)
 clean:
-	rm -f $(NEN)
+	@rm -f $(NEN)
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 re: fclean all
